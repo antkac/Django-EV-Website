@@ -3,7 +3,8 @@
 Purpose of the project is to create mockup rental site for EVs, and general EV database for analysis purposes.
 <br>
 Integrates Postgres DB hosted on Railway, containing records of Cars that been webscrapped.
-
+<br>
+Current Number of Car Records: 351
 
 ## **Project in Progress**
 Current Plans For The Website include:
