@@ -1,0 +1,100 @@
+{% extends 'cars/base.html' %}
+{% load static %}
+
+{% block page_title %}Car Detail{% endblock %}
+
+{% block content %}
+	<link rel="stylesheet" href="{% static 'cars/css/car_detail.css' %}">
+
+
+
+	<div class="container-sm rounded">
+		<!-- Container first row: content = car-image and pricing list -->
+		<div class="row gx-8 d-flex justify-content-between align-items-center">
+			<!-- Car Image -->
+			<div class="col-md-8">
+				<img src="/media/images/sample2.jpg" class="img-fluid rounded" alt="car-image" width="720">
+			</div>
+			<!-- List group with custom content and badges -->
+			<div class="col-md-4">
+				<span><h3><strong>{{car.make}}</strong> {{car.name}}</h3></span><br>
+				<div class="list-group">
+				  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2">
+					<div class="me-auto">
+					  <div class="fw-bold">Single Package</div>
+					  <span class="text-body-secondary">One Day</span>
+					</div>
+					<span class="badge text-bg-primary rounded-pill">$190.99</span>
+				  </a>
+				  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2">
+					<div class="me-auto">
+						<div class="fw-bold">Weekend Package</div>
+					  	<span class="text-body-secondary" style="margin-right:10px">3 Days</span>
+					  	<span class="text-success-emphasis">(-5%)</span>
+					</div>
+					<span class="badge text-bg-primary rounded-pill">$350.99</span>
+				  </a>
+				  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2">
+					<div class="me-auto">
+						<div class="fw-bold">Monthly Package</div>
+					  	<span class="text-body-secondary" style="margin-right:10px">30 Days</span>
+						<span class="text-success-emphasis">(-18%)</span>
+					</div>
+					<span class="badge text-bg-primary rounded-pill">$799.00</span>
+				  </a>
+				</div>
+				<br>
+				<button type="button" class="btn btn-outline-warning d-block w-100">Rent</button>
+			</div>
+	  	</div>
+		<br>
+		<!-- Container second row: content = car_specs -->
+		<div class="row g-0">
+		  	<div class="col-md-4">
+				<div class="card">
+					<div class="card-header"><strong>Performance</strong></div>
+					<div class="card-body">
+						<h6 class="card-subtitle mb-2 text-muted">Top Speed</h6>
+						<p class="card-text">{{car.top_speed}} km/h</p>
+						<h6 class="card-subtitle mb-2 text-muted">0-100 km/h</h6>
+						<p class="card-text">{{car.acceleration}} s</p>
+						<h6 class="card-subtitle mb-2 text-muted">Drive</h6>
+						<p class="card-text">{{car.drive}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header"><strong>Battery</strong></div>
+					<div class="card-body">
+						<h6 class="card-subtitle mb-2 text-muted">Capacity</h6>
+						<p class="card-text">{{car.battery|floatformat:1}} kWh</p>
+						<h6 class="card-subtitle mb-2 text-muted">Real Range</h6>
+						<p class="card-text">{{car.real_range}} km</p>
+						<h6 class="card-subtitle mb-2 text-muted">Efficiency</h6>
+						<p class="card-text">{{car.efficiency}} Wh/km</p>
+						<h6 class="card-subtitle mb-2 text-muted">Max Charging Power</h6>
+						<p class="card-text">{{car.charge_power|floatformat:0}} kW</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header"><strong>Features</strong></div>
+					<div class="card-body">
+						<h6 class="card-subtitle mb-2 text-muted">Number of Seats</h6>
+						<p class="card-text">{{car.seats}}</p>
+						<h6 class="card-subtitle mb-2 text-muted">Tow Hitch</h6>
+						{% if car.tow_hitch %}
+						<p class="card-text">Available</p>
+						{% else %}
+						<p class="card-text">Not Available</p>
+						{% endif %}
+						<h6 class="card-subtitle mb-2 text-muted">Value</h6>
+						<p class="card-text">{{car.value|floatformat:0}} Euro</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

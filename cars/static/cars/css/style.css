@@ -1,0 +1,7 @@
+.car-glossary {
+  display: none;
+}
+
+.figure.mb-0:hover + .car-glossary {
+  display: none;
+}

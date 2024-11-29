@@ -1,0 +1,24 @@
+{% extends 'cars/base.html' %}
+{% load static %}
+
+{% block page_title %}Index{% endblock %}
+{% block nav-link-index %}active{% endblock %}
+
+{% block content %}
+	<link rel="stylesheet" href="{% static 'cars/css/index.css' %}">
+	<div class="mt-5 d-flex justify-content-center align-items-center">
+		<div class="text-center">
+			<h2>EV Database & Rental Mockup Website</h2>
+			<h5>Project in Progress</h5>
+			<h6>Connected to Postgres DB<br>Populated with 351 car records</h6>
+			<h6>Initial release</h6>
+			<a href="{% url 'gallery' %}">
+			<button type="button" class="btn btn-outline-primary">Try it Out</button>
+			</a>
+		</div>
+	</div>
+	<!-- Gradient Background -->
+	<div class="main__bg"></div>
+    <div class="main__bg layer1"></div>
+    <div class="main__bg layer2"></div>
+{% endblock %}
