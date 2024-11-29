@@ -18,3 +18,5 @@ Current Plans For The Website include:
 3. Install dependencies: requirements.txt
 4. Create .env file: insert variables for postgres connection needed in settings.py
 
+## Preview ##
+![screenshot](media/images/django_website_showcase_example.png)
